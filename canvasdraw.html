@@ -1,0 +1,25 @@
+<html>
+  <body>
+    <canvas id="the_canvas" height = "400" width = "400"></canvas>
+      <script>
+        var canvas = document.getElementById("the_canvas");
+        var ctx = canvas.getContext("2d");
+        var x = 0
+        var y = 0
+        var draw = function(){
+          ctx.fillStyle="white"
+          ctx.fillRect(0,0,canvas.width,canvas.height)
+          y+=1;
+          if (y>canvas.width){
+            y=0;
+          };
+          var grd =ctx.createLinearGradient(0,0,0,300)
+          grd.addColorStop(0,"Aquamarine");
+          grd.addColorStop(1,"darkgreen")
+          ctx.fillStyle=grd;
+          ctx.fillRect (0,y,400,400)
+        };
+        setInterval(draw,2);
+      </script>
+  </body>
+</html>
