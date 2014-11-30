@@ -1,25 +1,106 @@
 <html>
-  <body>
-    <canvas id="the_canvas" height = "400" width = "400"></canvas>
-      <script>
-        var canvas = document.getElementById("the_canvas");
-        var ctx = canvas.getContext("2d");
-        var x = 0
-        var y = 0
-        var draw = function(){
-          ctx.fillStyle="white"
-          ctx.fillRect(0,0,canvas.width,canvas.height)
-          y+=1;
-          if (y>canvas.width){
-            y=0;
-          };
-          var grd =ctx.createLinearGradient(0,0,0,300)
-          grd.addColorStop(0,"Aquamarine");
-          grd.addColorStop(1,"darkgreen")
-          ctx.fillStyle=grd;
-          ctx.fillRect (0,y,400,400)
-        };
-        setInterval(draw,2);
-      </script>
-  </body>
+  <head>
+    <style>
+        body {
+          background: url("https://farm8.staticflickr.com/7557/15709711657_80e7cf5344.jpg") no-repeat;
+          background-size: 100%;
+          }
+    </style>
+  </head>
+<body>
+  <canvas id="person" width = "1600" height = "1600"></canvas>
+  <script>
+  var canvas= document.getElementById("person");
+  var ctx = canvas.getContext("2d");
+
+  ctx.beginPath();
+  ctx.moveTo(750,165);
+  ctx.bezierCurveTo(815,145,830,165,840,200);
+  ctx.lineTo(750,165);
+  ctx.fillStyle= "yellow";
+  ctx.fill();
+  ctx.closePath;
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(815,150);
+  ctx.lineTo(860,60);
+  ctx.closePath();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(770,100);
+  ctx.lineTo(880,145);
+  ctx.lineTo(855,70);
+  ctx.lineTo(770,100);
+  ctx.fillStyle= "green";
+  ctx.fill();
+  ctx.closePath;
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.arc(815,150,15,15,Math.PI*2,true);
+  var cherry= ctx.createRadialGradient(815,150,0,805,140,22);
+  cherry.addColorStop(0,"white");
+  cherry.addColorStop(1,"red");
+  ctx.fillStyle=cherry;
+  ctx.fill();
+  ctx.closePath;
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(560,175);
+  ctx.bezierCurveTo(560,440,800,440,800,175);
+  ctx.fillStyle= "rgba(255, 255, 255, 0.6)";
+  ctx.fill();
+  ctx.closePath();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(675,373);
+  ctx.lineTo(670,500);
+  ctx.lineTo(690,500);
+  ctx.lineTo(685,373);
+  ctx.closePath();
+  ctx.fillStyle= "rgba(255, 255, 255, 0.6)";
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(690,500);
+  ctx.lineTo(730,510);
+  ctx.lineTo(630,510);
+  ctx.lineTo(675,500);
+  ctx.fillStyle= "rgba(255, 255, 255, 0.6)";
+  ctx.fill();
+  ctx.closePath();
+  ctx.stroke();
+
+  var y = 230;
+  var draw= function(){
+  y+=1;
+  if (y>300){
+    y=230;
+  };
+  ctx.beginPath();
+  ctx.moveTo(565,230)
+  ctx.bezierCurveTo(595,420,765,420,795,230);
+  var grd=ctx.createLinearGradient(695,230,695,500)
+  grd.addColorStop(0, "white");
+  grd.addColorStop(1, "yellow");
+  ctx.fillStyle=grd;
+  ctx.fill();
+  closePath();
+  ctx.stroke();
+}
+setInterval(draw,5);
+
+</script>
+
+</body>
+<embed src="http://k007.kiwi6.com/hotlink/u1yso822kt/Santo_and_Johnny_Sleepwalk_1959.mp3"
+width="180"
+height="90"
+loop="false"
+autostart="true" />
 </html>
