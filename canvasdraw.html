@@ -76,15 +76,15 @@
   ctx.closePath();
   ctx.stroke();
 
-  var y = 230;
+  var y = 235;
   var draw= function(){
-  y+=1;
-  if (y>300){
-    y=230;
+  y-=1;
+  if (y<215){
+    y=235;
   };
   ctx.beginPath();
-  ctx.moveTo(565,230)
-  ctx.bezierCurveTo(595,420,765,420,795,230);
+  ctx.moveTo(565,y)
+  ctx.bezierCurveTo(595,420,765,420,795,y);
   var grd=ctx.createLinearGradient(695,230,695,500)
   grd.addColorStop(0, "white");
   grd.addColorStop(1, "yellow");
@@ -93,7 +93,7 @@
   closePath();
   ctx.stroke();
 }
-setInterval(draw,5);
+setInterval(draw,350);
 
 </script>
 
